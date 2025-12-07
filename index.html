@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PET Hayvonlar Bog'i 🐾</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-paw"></i>
+                <span>PET</span>Hayvonlar Bog'i
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">🏠 Bosh sahifa</a></li>
+                <li><a href="#animals" class="nav-link">🐶 Hayvonlar</a></li>
+                <li><a href="#booking" class="nav-link">📅 Bron qilish</a></li>
+                <li><a href="#services" class="nav-link">⭐ Xizmatlar</a></li>
+                <li><a href="#contact" class="nav-link">📞 Aloqa</a></li>
+            </ul>
+            <button class="telegram-btn" id="telegramBtn">
+                <i class="fab fa-telegram"></i> Telegram Bot
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="highlight">Hayvonlaringiz</span> uchun<br>
+                Eng Zo'r G'amxo'rlik 🐾
+            </h1>
+            <p class="hero-subtitle">
+                Professional parvarish, sevgi va e'tibor. Hayvonlaringiz bizda xavfsiz!
+            </p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Hoziroq bron qilish
+                </a>
+                <a href="#animals" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i> Hayvonlarni ko'rish
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-animals">
+                <div class="animal-icon cat"><i class="fas fa-cat"></i></div>
+                <div class="animal-icon dog"><i class="fas fa-dog"></i></div>
+                <div class="animal-icon rabbit"><i class="fas fa-rabbit"></i></div>
+                <div class="animal-icon bird"><i class="fas fa-dove"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Animals Section -->
+    <section id="animals" class="animals-section">
+        <div class="container">
+            <h2 class="section-title">🐾 Mavjud Hayvonlarimiz</h2>
+            <p class="section-subtitle">Quyidagi sevimli hayvonlardan birini tanlang</p>
+            
+            <div class="animals-grid">
+                <div class="animal-card" data-animal="dog">
+                    <div class="animal-icon-large">
+                        <i class="fas fa-dog"></i>
+                    </div>
+                    <h3>Kuchuklar</h3>
+                    <p>Har xil zotdagi sevimli itlar</p>
+                    <div class="animal-info">
+                        <span><i class="fas fa-clock"></i> 10:00 - 19:00</span>
+                        <span><i class="fas fa-tag"></i> 20,000 so'm/soat</span>
+                    </div>
+                    <button class="book-btn" data-animal="dog">Bron qilish</button>
+                </div>
+
+                <div class="animal-card" data-animal="cat">
+                    <div class="animal-icon-large">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h3>Mushuklar</h3>
+                    <p>Yoqimtoy va muloyim mushuklar</p>
+                    <div class="animal-info">
+                        <span><i class="fas fa-clock"></i> 09:00 - 20:00</span>
+                        <span><i class="fas fa-tag"></i> 15,000 so'm/soat</span>
+                    </div>
+                    <button class="book-btn" data-animal="cat">Bron qilish</button>
+                </div>
+
+                <div class="animal-card" data-animal="rabbit">
+                    <div class="animal-icon-large">
+                        <i class="fas fa-rabbit"></i>
+                    </div>
+                    <h3>Quyonlar</h3>
+                    <p>Sevimli va beozor quyonlar</p>
+                    <div class="animal-info">
+                        <span><i class="fas fa-clock"></i> 08:00 - 18:00</span>
+                        <span><i class="fas fa-tag"></i> 10,000 so'm/soat</span>
+                    </div>
+                    <button class="book-btn" data-animal="rabbit">Bron qilish</button>
+                </div>
+
+                <div class="animal-card" data-animal="bird">
+                    <div class="animal-icon-large">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <h3>Qushlar</h3>
+                    <p>Rang-barang sayqallangan qushlar</p>
+                    <div class="animal-info">
+                        <span><i class="fas fa-clock"></i> 09:00 - 19:00</span>
+                        <span><i class="fas fa-tag"></i> 12,000 so'm/soat</span>
+                    </div>
+                    <button class="book-btn" data-animal="bird">Bron qilish</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2 class="section-title">📅 Bron Qilish</h2>
+            <p class="section-subtitle">Hayvoningiz uchun joy bron qiling</p>
+            
+            <div class="booking-form">
+                <form id="bookingForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName"><i class="fas fa-user"></i> To'liq ismingiz</label>
+                            <input type="text" id="fullName" required placeholder="Ism Familiya">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Telefon raqam</label>
+                            <input type="tel" id="phone" required placeholder="+998 90 123 45 67">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email manzil</label>
+                            <input type="email" id="email" required placeholder="email@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="animalType"><i class="fas fa-paw"></i> Hayvon turi</label>
+                            <select id="animalType" required>
+                                <option value="">Tanlang...</option>
+                                <option value="dog">🐶 Kuchuk</option>
+                                <option value="cat">🐱 Mushuk</option>
+                                <option value="rabbit">🐰 Quyon</option>
+                                <option value="bird">🐦 Qush</option>
+                                <option value="hamster">🐹 Hamster</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="roomType"><i class="fas fa-home"></i> Xona turi</label>
+                            <select id="roomType" required>
+                                <option value="standard">🏠 Standard (Oddiy)</option>
+                                <option value="premium">⭐ Premium (Keng)</option>
+                                <option value="vip">👑 VIP (Maxsus)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bookingDate"><i class="fas fa-calendar"></i> Sana</label>
+                            <input type="date" id="bookingDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="startTime"><i class="fas fa-clock"></i> Boshlanish vaqti</label>
+                            <input type="time" id="startTime" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="endTime"><i class="fas fa-clock"></i> Tugash vaqti</label>
+                            <input type="time" id="endTime" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="specialRequirements"><i class="fas fa-sticky-note"></i> Maxsus talablar</label>
+                        <textarea id="specialRequirements" rows="4" placeholder="Maxsus ehtiyojlar, oziq-ovqat, o'yinchoqlar..."></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Buyurtma yuborish
+                        </button>
+                        <p class="form-note">
+                            <i class="fas fa-info-circle"></i> Buyurtma Telegram bot orqali adminlarga yuboriladi
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">⭐ Bizning Xizmatlar</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Xavfsizlik</h3>
+                    <p>Hayvonlaringiz maxsus xavfsiz joylarda saqlanadi</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Veterinar</h3>
+                    <p>Professional veterinarlar doimiy nazoratda</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Sifatli ovqat</h3>
+                    <p>Har bir hayvon uchun maxsus ovqatlanish</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>O'yin-kulgi</h3>
+                    <p>Hayvonlar uchun maxsus o'yin maydonchalari</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-paw"></i> PET Hayvonlar Bog'i</h3>
+                    <p>Hayvonlaringiz uchun eng yaxshi parvarish va g'amxo'rlik</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Aloqa</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Toshkent shahri, Yunusobod</p>
+                    <p><i class="fas fa-phone"></i> +998 77 777 77 77</p>
+                    <p><i class="fas fa-envelope"></i> info@petgarden.uz</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ish vaqtlari</h4>
+                    <p>Dushanba - Juma: 08:00 - 20:00</p>
+                    <p>Shanba - Yakshanba: 09:00 - 18:00</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PET Hayvonlar Bog'i. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>✅ Muvaffaqiyatli!</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="successMessage">Buyurtmangiz qabul qilindi! Adminlar tez orada siz bilan bog'lanishadi.</p>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
